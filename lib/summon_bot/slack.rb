@@ -1,3 +1,6 @@
+require 'rails'
+require 'slack-notifier'
+
 module SummonBot
   class Slack
     PREFIX = 'SUMMON_BOT_SLACK__'
