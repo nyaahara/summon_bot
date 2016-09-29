@@ -26,14 +26,19 @@ First, define your environment for example
 
 .env
 ```
-SUMMON_BOT_SLACK__MARIO = 'slack url'
+SUMMON_BOT_SLACK__NATTSUNN=https://hooks.slack.com/services/XXXXXXXX/XXXXXXXX/XXXXXXXX
 ```
 
 ```
-SummonBot::Slack.mario.speak('notification')
-
-#=> [ENV=development] notification
+SummonBot::Slack.nattsunn.speak('notification')
+=> #<Net::HTTPOK 200 OK readbody=true>
 ```
+
+And this:
+
+![](https://gyazo.com/151508f7304326f65edfe4bd5b029097/raw)
+
+
 
 If you want to use dummy notification class, write this your code.
 `initializer/summon_bot.rb` instead.
