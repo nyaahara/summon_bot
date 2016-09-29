@@ -1,0 +1,3 @@
+module SummonBot
+  # Your code goes here...
+end
