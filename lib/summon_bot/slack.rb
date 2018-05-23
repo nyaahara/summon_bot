@@ -10,8 +10,8 @@ module SummonBot
         fail NoMethodError unless bot_names.include? name
         bot = notifier_class.new(ENV["#{PREFIX}#{name.upcase}"])
 
-        def bot.speak(message)
-          ping("[ENV=#{Rails.env}] #{message}")
+        def bot.speak(message, options = {})
+          ping("[ENV=#{Rails.env}] #{message}", options)
         end
 
         bot

@@ -12,8 +12,13 @@ RSpec.describe SummonBot::Slack, type: :model do
       it { expect(subject).to respond_to :speak }
       it 'notification message with RAILS_ENV name' do
         object = subject
-        expect(object).to receive(:ping).with('[ENV=test] notification test')
+        expect(object).to receive(:ping).with('[ENV=test] notification test', {})
         object.speak('notification test')
+      end
+      it 'notification message with option' do
+        object = subject
+        expect(object).to receive(:ping).with('[ENV=test] notification test', {link_names: 1})
+        object.speak('notification test', {link_names: 1})
       end
     end
 
