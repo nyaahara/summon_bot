@@ -3,11 +3,11 @@ module SummonBot
     def initialize(_)
     end
 
-    def speak(message)
+    def speak(message, _options = {})
       ping("[ENV=#{Rails.env}] #{message}")
     end
 
-    def ping(message)
+    def ping(message, _options = {})
       puts '[warning] Slack notification is disabled.'
       puts message
     end
