@@ -51,7 +51,7 @@ SummonBot::Slack.instance_eval { @notifier_class = SummonBot::DummyNotifier }
 ## Test command.
 
 ```
-RAILS_ENV=test bers
+RAILS_ENV=test bundle exec rspec
 ```
 
 ## License
