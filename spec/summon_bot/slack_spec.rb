@@ -24,7 +24,12 @@ RSpec.describe SummonBot::Slack, type: :model do
 
     context 'when message is bot name not defined environment variables' do
       let(:bot_name) { :unknown_bot_name }
-      it { expect { subject }.to raise_error(NoMethodError) }
+      it 'raises SummonBot::EnvNotFoundError' do
+        expect { subject }.to raise_error(
+          SummonBot::EnvNotFoundError,
+          "Not found ENV: SUMMON_BOT_SLACK__UNKNOWN_BOT_NAME. Please check/set ENV."
+        )
+      end
     end
   end
 end
